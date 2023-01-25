@@ -9,6 +9,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:title="@string/sign_up_title"
+        app:navigationIcon="@drawable/ic_arrow_back_24"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"/>
@@ -97,7 +98,7 @@
 
 
     <com.glushko.testappbarrier.presentation.core.views.LoaderButton
-        android:id="@+id/btnLogIn"
+        android:id="@+id/buttonSignUp"
         style="@style/Button"
         android:layout_width="0dp"
         android:layout_height="wrap_content"

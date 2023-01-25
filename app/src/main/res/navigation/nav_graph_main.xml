@@ -12,4 +12,13 @@
         android:label="SplashFragment"
         tools:layout="@layout/fragment_splash"
         />
+    <fragment
+        android:id="@+id/logInFragment"
+        android:name="com.glushko.testappbarrier.presentation.log_in.LogInFragment"
+        android:label="LogInFragment" />
+    <fragment
+        android:id="@+id/signUpFragment"
+        android:name="com.glushko.testappbarrier.presentation.sign_up.SignUpFragment"
+        android:label="SignUpFragment" />
+
 </navigation>

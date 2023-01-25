@@ -1,7 +1,8 @@
-package com.glushko.testappbarrier
+package com.glushko.testappbarrier.presentation
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.glushko.testappbarrier.R
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
