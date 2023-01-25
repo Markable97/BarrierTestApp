@@ -9,6 +9,8 @@ interface ApiService {
 
     companion object {
         const val BASIC_AUTH = "Basic"
+        const val BEARER_AUTH = "Bearer"
+        const val EXTRA_AUTH = "Extra"
     }
 
     @Headers("Content-Type: application/json")
@@ -19,6 +21,11 @@ interface ApiService {
     suspend fun authenticateUser(
         @Header("Authorization") token: String
     ): Response<JsonObject>
+
+    @GET("v1/tokens/refresh")
+    suspend fun refreshToken(
+        @Header("Authorization") token: String
+    ) : Response<JsonObject>
 
     @GET("v1/users/users/{userId}")
     suspend fun getUserInfo(

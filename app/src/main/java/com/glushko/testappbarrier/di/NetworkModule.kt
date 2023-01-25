@@ -2,6 +2,7 @@ package com.glushko.testappbarrier.di
 
 import com.glushko.testappbarrier.data.network.ApiService
 import com.glushko.testappbarrier.data.network.BaseTokenInterceptor
+import com.glushko.testappbarrier.repository.user.UserAuthStorage
 import com.glushko.testappbarrier.utils.Constants
 import com.glushko.testappbarrier.utils.NetworkUtils
 import com.google.gson.Gson
@@ -52,8 +53,12 @@ object NetworkModule {
 
     @Singleton
     @Provides
-    fun provideNetworkUtil(gson: Gson): NetworkUtils {
-        return NetworkUtils(gson)
+    fun provideNetworkUtil(
+        gson: Gson,
+        apiService: ApiService,
+        userAuthStorage: UserAuthStorage
+    ): NetworkUtils {
+        return NetworkUtils(gson, apiService, userAuthStorage)
     }
 
     @Singleton

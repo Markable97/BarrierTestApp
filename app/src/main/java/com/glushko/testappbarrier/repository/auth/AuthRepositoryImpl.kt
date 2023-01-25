@@ -72,10 +72,6 @@ class AuthRepositoryImpl @Inject constructor(
         return String(Base64.getDecoder().decode(data.split(".")[1]))
     }
 
-    override suspend fun refreshToken(accessToken: String, refreshToken: String): Result<TokenJWT> {
-        TODO("Not yet implemented")
-    }
-
     override suspend fun getUser(): Result<UserInfoUI> {
         val response = networkUtils.getResponse<UserInfoReMain>(UserInfoReMain::class.java){
             apiService.getUserInfo(getUserId())

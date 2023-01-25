@@ -17,11 +17,6 @@ interface AuthRepository {
         password: String
     ) : Result<TokenJWT>
 
-    suspend fun refreshToken(
-        accessToken: String,
-        refreshToken: String
-    ): Result<TokenJWT>
-
     suspend fun getUser() : Result<UserInfoUI>
 
 }
