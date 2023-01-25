@@ -10,6 +10,13 @@ import androidx.fragment.app.Fragment
 import androidx.navigation.NavOptions
 import androidx.navigation.fragment.findNavController
 import androidx.viewbinding.ViewBinding
+import com.glushko.testappbarrier.R
+import com.glushko.testappbarrier.data.network.UnsuccessfulResponseException
+import com.glushko.testappbarrier.utils.extensions.toast
+import timber.log.Timber
+import java.net.SocketTimeoutException
+import java.net.UnknownHostException
+import kotlin.coroutines.cancellation.CancellationException
 
 abstract class BaseFragment<B : ViewBinding>(@LayoutRes layout: Int) : Fragment(layout) {
 
@@ -31,6 +38,27 @@ abstract class BaseFragment<B : ViewBinding>(@LayoutRes layout: Int) : Fragment(
         findNavController().navigate(resId = resId, args = args, navOptions = navOption)
     }
 
+    fun showErrors(ex: Exception) {
+        when (ex) {
+            is UnknownHostException -> {
+                toast(requireContext(), R.string.network_error)
+            }
+            is UnsuccessfulResponseException -> {
+                toast(requireContext(), ex.errorMessage)
+            }
+            is CancellationException -> {
+                Timber.e("Все норм")
+                Timber.e("${ex.message}")
+            }
+            is SocketTimeoutException -> {
+                toast(requireContext(), "Запрос обрабатывается слишком долго")
+            }
+            else -> {
+                toast(requireContext(), ex.message ?: getString(R.string.network_error_default))
+                Timber.e("${ex.printStackTrace()}")
+            }
+        }
+    }
 
     override fun onDestroy() {
         super.onDestroy()

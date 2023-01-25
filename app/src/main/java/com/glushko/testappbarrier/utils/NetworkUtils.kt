@@ -20,6 +20,20 @@ class NetworkUtils @Inject constructor(
         private const val _409 = 409
     }
 
+    suspend fun getResponseEmptyBody(request: suspend () -> Response<Void>): Result<Unit>{
+        return try {
+            val result = request.invoke()
+            if (result.isSuccessful){
+                Result.Success(Unit)
+            } else {
+                Result.Error(parseError(result))
+            }
+        } catch (ex: Exception) {
+            Timber.e("${ex.message}")
+            Result.Error(ex)
+        }
+    }
+
     suspend fun <T> getResponse(type: Type, request: suspend () -> Response<JsonObject>): Result<T> {
         return try {
             val result = request.invoke()
