@@ -8,4 +8,16 @@
 
     <string name="splash_screen_message">Здесь обычно логотип компании =)</string>
 
+    <string name="login_by_email_title">Введите электронную почту и пароль</string>
+    <string name="login">Войти</string>
+    <string name="login_title">Вход</string>
+
+    <string name="hint_email">Эл. почта</string>
+    <string name="hint_password">Пароль</string>
+    <string name="hint_name">Имя</string>
+
+    <string name="sign_up_title">Регистрация</string>
+    <string name="sign_up_button">Зерегистрироваться</string>
+
+
 </resources>
