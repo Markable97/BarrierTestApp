@@ -37,14 +37,18 @@ class NetworkUtils @Inject constructor(
     }
 
     private fun parseError(result: Response<*>): UnsuccessfulResponseException {
-         val errorMessage = when(result.code()){
-            _400 -> R.string.network_error_default
-            _409 -> R.string.network_error_user_already_exists
-            else -> {
-                 R.string.network_error_default
-             }
+         return when(result.code()){
+            _409 -> UnsuccessfulResponseException.AlreadyExistsException(
+                R.string.network_error_user_already_exists
+            )
+            _401 -> {
+                UnsuccessfulResponseException.UnauthorizedException(
+                    R.string.network_error_unauthorized
+                )
+            }
+            else -> UnsuccessfulResponseException.OtherException()
+
          }
-        return UnsuccessfulResponseException(errorMessage)
     }
 
 }
