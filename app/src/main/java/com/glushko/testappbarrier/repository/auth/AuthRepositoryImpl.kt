@@ -2,6 +2,7 @@ package com.glushko.testappbarrier.repository.auth
 
 import com.glushko.testappbarrier.data.model.token.TokenJWT
 import com.glushko.testappbarrier.data.model.token.TokenJWTRes
+import com.glushko.testappbarrier.data.model.user.UserCreateReq
 import com.glushko.testappbarrier.data.model.user.UserInfoUI
 import com.glushko.testappbarrier.data.network.ApiService
 import com.glushko.testappbarrier.utils.NetworkUtils
@@ -22,7 +23,21 @@ class AuthRepositoryImpl @Inject constructor(
         email: String,
         password: String
     ): Result<Unit> {
-        TODO("Not yet implemented")
+        val response = networkUtils.getResponseEmptyBody {
+            apiService.createUser(
+                header = "application/json",
+                UserCreateReq(
+                    firstName = firstName,
+                    email = email,
+                    password = password
+                )
+            )
+        }
+        return when(response){
+            is Result.Error -> Result.Error(response.exception)
+            Result.Loading -> Result.Loading
+            is Result.Success -> Result.Success(response.data)
+        }
     }
 
     override suspend fun authenticateUser(email: String, password: String): Result<TokenJWT> {

@@ -57,7 +57,7 @@ class LogInFragment : BaseFragment<FragmentLogInBinding>(R.layout.fragment_log_i
                     editTextPassword.resources.toString()
                 )
             } else {
-                toast(requireContext(), R.string.error_empty_field)
+                toast(requireContext(), R.string.error_empty_fields)
             }
 
         }

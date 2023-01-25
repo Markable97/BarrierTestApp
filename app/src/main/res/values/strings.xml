@@ -7,7 +7,9 @@
     <string name="network_error_unauthorized">Не возможно пройти авторизацию, попробуйте войти снова</string>
 
     <string name="network_error">Отсутсвует подключение к интернету</string>
-    <string name="error_empty_field">Заполните поля</string>
+    <string name="error_empty_fields">Заполните поля</string>
+
+
 
     <string name="splash_screen_message">Здесь обычно логотип компании =)</string>
 
@@ -21,6 +23,7 @@
 
     <string name="sign_up_title">Регистрация</string>
     <string name="sign_up_button">Зерегистрироваться</string>
+    <string name="sign_up_success">Пользователь успешно создан!</string>
 
 
 </resources>
