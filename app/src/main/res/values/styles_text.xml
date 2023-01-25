@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="FontRegular">
+        <item name="android:fontFamily">@font/roboto</item>
+        <item name="android:textColor">@color/primaryText</item>
+    </style>
+    <style name="FontMedium">
+        <item name="android:fontFamily">@font/roboto_medium</item>
+        <item name="android:textColor">@color/primaryText</item>
+    </style>
+    <style name="FontBold">
+        <item name="android:fontFamily">@font/roboto_bold</item>
+        <item name="android:textColor">@color/primaryText</item>
+    </style>
+
+
+    <style name="Headline1" parent="FontBold">
+        <item name="android:textSize">32sp</item>
+    </style>
+
+    <style name="Headline2" parent="FontBold">
+        <item name="android:textSize">28sp</item>
+    </style>
+
+    <style name="Headline3" parent="FontBold">
+        <item name="android:textSize">24sp</item>
+    </style>
+
+    <style name="Headline4" parent="FontBold">
+        <item name="android:textSize">20sp</item>
+    </style>
+
+    <style name="Body1" parent="FontMedium">
+        <item name="android:textSize">18sp</item>
+    </style>
+
+    <style name="Body2" parent="FontMedium">
+        <item name="android:textSize">16sp</item>
+    </style>
+
+    <style name="Body3" parent="FontRegular">
+        <item name="android:textSize">16sp</item>
+    </style>
+
+    <style name="Body4" parent="FontRegular">
+        <item name="android:textSize">14sp</item>
+    </style>
+
+    <style name="SmallText1" parent="FontRegular">
+        <item name="android:textSize">14sp</item>
+    </style>
+
+    <style name="SmallText2" parent="FontRegular">
+        <item name="android:textSize">12sp</item>
+    </style>
+
+</resources>

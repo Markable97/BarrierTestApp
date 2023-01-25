@@ -1,7 +1,11 @@
 <resources>
     <string name="app_name">TestAppBarrier</string>
 
+    <!--Region network error-->
     <string name="network_error_default">Ошибка сервера</string>
     <string name="network_error_user_already_exists">Такой пользователь уже существует</string>
     <string name="network_error_unauthorized">Не возможно пройти авторизацию, попробуйте войти снова</string>
+
+    <string name="splash_screen_message">Здесь обычно логотип компании =)</string>
+
 </resources>
