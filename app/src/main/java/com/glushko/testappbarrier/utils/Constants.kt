@@ -4,6 +4,9 @@ object Constants {
 
     //Region network
     const val TEST_API_URL = "https://dev.barrier.ru/"
+    const val HEADER_AUTH_KEY = "Authorization"
+    const val HEADER_AUTH_TOKEN_TYPE = "Bearer"
+    const val METHOD_GET_USERS = "v1/users/users/"
 
     //Region prefs
     const val SHARED_PREFERENCES = "shared preferences"

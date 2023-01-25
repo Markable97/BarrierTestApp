@@ -20,5 +20,9 @@
         android:id="@+id/signUpFragment"
         android:name="com.glushko.testappbarrier.presentation.sign_up.SignUpFragment"
         android:label="SignUpFragment" />
+    <fragment
+        android:id="@+id/profileFragment"
+        android:name="com.glushko.testappbarrier.presentation.profile.ProfileFragment"
+        android:label="ProfileFragment" />
 
 </navigation>

@@ -1,6 +1,7 @@
 package com.glushko.testappbarrier.di
 
 import com.glushko.testappbarrier.data.network.ApiService
+import com.glushko.testappbarrier.data.network.BaseTokenInterceptor
 import com.glushko.testappbarrier.utils.Constants
 import com.glushko.testappbarrier.utils.NetworkUtils
 import com.google.gson.Gson
@@ -32,10 +33,10 @@ object NetworkModule {
     @Provides
     fun providesOkHttpClient(
         httpLoggingInterceptor: HttpLoggingInterceptor,
-//        baseTokenInterceptor: BaseTokenInterceptor
+        baseTokenInterceptor: BaseTokenInterceptor
     ): OkHttpClient {
         return OkHttpClient.Builder()
-//            .addInterceptor(baseTokenInterceptor)
+            .addInterceptor(baseTokenInterceptor)
             .addInterceptor(httpLoggingInterceptor)
             .connectTimeout(60, TimeUnit.SECONDS)
             .readTimeout(30, TimeUnit.SECONDS)

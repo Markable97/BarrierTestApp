@@ -14,9 +14,9 @@ data class UserInfoUI(
     val email: String?,
     val mobile: String?,
     val uuid: String?,
-    val isOffer: Boolean?,
-    val isEnabled: Boolean?,
-    val isAgreed: Boolean?,
+    val isOffer: Int?,
+    val isEnabled: Int?,
+    val isAgreed: Int?,
     val lastActivity: String?,
     val createdAt: String?,
     val updatedAt: String?

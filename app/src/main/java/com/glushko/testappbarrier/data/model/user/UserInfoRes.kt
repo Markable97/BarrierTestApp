@@ -21,9 +21,9 @@ data class UserInfoRes(
     @SerializedName("email") val email: String? = null,
     @SerializedName("mobile") val mobile: String? = null,
     @SerializedName("uuid") val uuid: String? = null,
-    @SerializedName("is_offer") val isOffer: Boolean? = null,
-    @SerializedName("is_enabled") val isEnabled: Boolean? = null,
-    @SerializedName("is_agreed") val isAgreed: Boolean? = null,
+    @SerializedName("is_offer") val isOffer: Int? = null,
+    @SerializedName("is_enabled") val isEnabled: Int? = null,
+    @SerializedName("is_agreed") val isAgreed: Int? = null,
     @SerializedName("last_activity") val lastActivity: String? = null,
     @SerializedName("created_at") val createdAt: String? = null,
     @SerializedName("updated_at") val updatedAt: String? = null

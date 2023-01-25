@@ -5,6 +5,7 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.glushko.testappbarrier.repository.auth.AuthRepository
+import com.glushko.testappbarrier.utils.EventLiveData
 import com.glushko.testappbarrier.utils.Result
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.delay
@@ -16,7 +17,7 @@ class SignUpViewModel @Inject constructor(
     private val authRepository: AuthRepository
 ) : ViewModel() {
 
-    private val _eventSignUp = MutableLiveData<Result<Unit>>()
+    private val _eventSignUp = EventLiveData<Result<Unit>>()
     val eventSignUp: LiveData<Result<Unit>> = _eventSignUp
 
     fun singUp(email: String, password: String, name: String) {

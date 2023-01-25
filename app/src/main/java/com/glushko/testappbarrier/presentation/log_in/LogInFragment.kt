@@ -5,6 +5,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.viewModels
+import androidx.navigation.NavOptions
 import com.glushko.testappbarrier.R
 import com.glushko.testappbarrier.presentation.base.BaseFragment
 import com.glushko.testappbarrier.databinding.FragmentLogInBinding
@@ -41,7 +42,10 @@ class LogInFragment : BaseFragment<FragmentLogInBinding>(R.layout.fragment_log_i
                 }
                 Result.Loading -> {}
                 is Result.Success -> {
-                    Timber.d("SUCCESS ${it.data}")
+                    val navOptions = NavOptions.Builder()
+                        .setPopUpTo(R.id.nav_graph_main, true)
+                        .build()
+                    navigate(R.id.profileFragment, navOption = navOptions)
                 }
             }
         }
@@ -53,8 +57,8 @@ class LogInFragment : BaseFragment<FragmentLogInBinding>(R.layout.fragment_log_i
             val password = editTextPassword.text.toString()
             if (email.isNotBlank() && password.isNotBlank()) {
                 viewModel.logIn(
-                    editTextEmail.text.toString(),
-                    editTextPassword.resources.toString()
+                    email,
+                    password
                 )
             } else {
                 toast(requireContext(), R.string.error_empty_fields)

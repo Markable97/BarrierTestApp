@@ -20,4 +20,9 @@ interface ApiService {
         @Header("Authorization") token: String
     ): Response<JsonObject>
 
+    @GET("v1/users/users/{userId}")
+    suspend fun getUserInfo(
+        @Path("userId") userId: String
+    ) : Response<JsonObject>
+
 }
