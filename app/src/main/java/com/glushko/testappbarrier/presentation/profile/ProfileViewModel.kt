@@ -16,7 +16,6 @@ import javax.inject.Inject
 @HiltViewModel
 class ProfileViewModel @Inject constructor(
     private val authRepository: AuthRepository,
-    private val userAuthStorage: UserAuthStorage
 ) : ViewModel() {
 
     private val _liveDataUserInfo = MutableLiveData<Result<UserInfoUI>>()
@@ -35,7 +34,7 @@ class ProfileViewModel @Inject constructor(
     }
 
     fun signOut(){
-        userAuthStorage.clear()
+        authRepository.signOut()
     }
 
 

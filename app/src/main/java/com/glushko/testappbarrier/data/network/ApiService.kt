@@ -1,6 +1,7 @@
 package com.glushko.testappbarrier.data.network
 
 import com.glushko.testappbarrier.data.model.user.UserCreateReq
+import com.glushko.testappbarrier.utils.Constants
 import com.google.gson.JsonObject
 import retrofit2.Response
 import retrofit2.http.*
@@ -27,7 +28,7 @@ interface ApiService {
         @Header("Authorization") token: String
     ) : Response<JsonObject>
 
-    @GET("v1/users/users/{userId}")
+    @GET("${Constants.METHOD_GET_USERS}{userId}")
     suspend fun getUserInfo(
         @Path("userId") userId: String
     ) : Response<JsonObject>

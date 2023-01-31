@@ -83,6 +83,10 @@ class AuthRepositoryImpl @Inject constructor(
         }
     }
 
+    override fun signOut() {
+        userAuthStorage.clear()
+    }
+
     private fun getUserId(): String{
         val accessToken = userAuthStorage.tokenInfo.accessToken
         val jsonInfo = decodeBase64(accessToken)

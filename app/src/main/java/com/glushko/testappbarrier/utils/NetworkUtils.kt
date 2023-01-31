@@ -20,12 +20,6 @@ class NetworkUtils @Inject constructor(
     private val userAuthStorage: UserAuthStorage
 ) {
 
-    companion object {
-        private const val _400 = 400
-        private const val _401 = 401
-        private const val _409 = 409
-    }
-
     suspend fun getResponseEmptyBody(request: suspend () -> Response<Void>): Result<Unit> {
         return try {
             val result = request.invoke()
@@ -40,7 +34,7 @@ class NetworkUtils @Inject constructor(
         }
     }
 
-    suspend fun getResponseRefreshToken(request: suspend () -> Response<JsonObject>): Result<TokenJWT> {
+    private suspend fun  getResponseRefreshToken(request: suspend () -> Response<JsonObject>): Result<TokenJWT> {
         return try {
             val result = request.invoke()
             val body = result.body()
@@ -105,10 +99,10 @@ class NetworkUtils @Inject constructor(
 
     private fun parseError(result: Response<*>): UnsuccessfulResponseException {
         return when (result.code()) {
-            _409 -> UnsuccessfulResponseException.AlreadyExistsException(
+            409 -> UnsuccessfulResponseException.AlreadyExistsException(
                 R.string.network_error_user_already_exists
             )
-            _401 -> {
+            401 -> {
                 UnsuccessfulResponseException.UnauthorizedException(
                     R.string.network_error_unauthorized
                 )

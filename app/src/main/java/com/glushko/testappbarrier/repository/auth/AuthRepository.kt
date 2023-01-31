@@ -19,4 +19,6 @@ interface AuthRepository {
 
     suspend fun getUser() : Result<UserInfoUI>
 
+    fun signOut()
+
 }

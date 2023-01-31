@@ -66,7 +66,8 @@ class LogInFragment : BaseFragment<FragmentLogInBinding>(R.layout.fragment_log_i
 
         }
         textSignUp.setSafeOnClickListener {
-            navigate(R.id.signUpFragment)
+            Timber.d("Клин")
+//            navigate(R.id.signUpFragment)
         }
 
     }

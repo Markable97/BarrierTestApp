@@ -18,7 +18,7 @@ class BaseTokenInterceptor @Inject constructor(private val sharedPreferences: Sh
 
         val headersBuilder = originalRequest.headers.newBuilder()
 
-        if (url.toString().contains(Constants.METHOD_GET_USERS)) {
+        if (Constants.METHOD_GET_USERS in url.toString()) {
             sharedPreferences.getString(Constants.KEY_ACCESS_TOKEN, null)?.also { accessToken ->
                 headersBuilder.add(Constants.HEADER_AUTH_KEY, "${Constants.HEADER_AUTH_TOKEN_TYPE} $accessToken")
             }
