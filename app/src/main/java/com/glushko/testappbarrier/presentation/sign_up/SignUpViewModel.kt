@@ -1,10 +1,9 @@
 package com.glushko.testappbarrier.presentation.sign_up
 
 import androidx.lifecycle.LiveData
-import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.glushko.testappbarrier.repository.auth.AuthRepository
+import com.glushko.testappbarrier.domain.aurh.AuthRepository
 import com.glushko.testappbarrier.utils.EventLiveData
 import com.glushko.testappbarrier.utils.Result
 import dagger.hilt.android.lifecycle.HiltViewModel

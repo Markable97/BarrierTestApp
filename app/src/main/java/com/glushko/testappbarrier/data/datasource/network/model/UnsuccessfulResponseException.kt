@@ -1,4 +1,4 @@
-package com.glushko.testappbarrier.data.network
+package com.glushko.testappbarrier.data.datasource.network.model
 
 import androidx.annotation.StringRes
 import com.glushko.testappbarrier.R

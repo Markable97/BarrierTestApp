@@ -4,9 +4,8 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.glushko.testappbarrier.data.model.user.UserInfoUI
-import com.glushko.testappbarrier.repository.auth.AuthRepository
-import com.glushko.testappbarrier.repository.user.UserAuthStorage
+import com.glushko.testappbarrier.presentation.profile.model.UserInfoUI
+import com.glushko.testappbarrier.domain.aurh.AuthRepository
 import dagger.hilt.android.lifecycle.HiltViewModel
 import com.glushko.testappbarrier.utils.Result
 import kotlinx.coroutines.delay

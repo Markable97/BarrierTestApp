@@ -1,12 +1,13 @@
-package com.glushko.testappbarrier.repository.auth
+package com.glushko.testappbarrier.data.repository.auth
 
 import com.glushko.testappbarrier.data.model.token.TokenJWT
 import com.glushko.testappbarrier.data.model.token.TokenJWTRes
 import com.glushko.testappbarrier.data.model.user.UserCreateReq
 import com.glushko.testappbarrier.data.model.user.UserInfoReMain
-import com.glushko.testappbarrier.data.model.user.UserInfoUI
-import com.glushko.testappbarrier.data.network.ApiService
-import com.glushko.testappbarrier.repository.user.UserAuthStorage
+import com.glushko.testappbarrier.presentation.profile.model.UserInfoUI
+import com.glushko.testappbarrier.data.datasource.network.ApiService
+import com.glushko.testappbarrier.data.datasource.local.UserAuthStorage
+import com.glushko.testappbarrier.domain.aurh.AuthRepository
 import com.glushko.testappbarrier.utils.NetworkUtils
 import dagger.hilt.components.SingletonComponent
 import it.czerwinski.android.hilt.annotations.BoundTo

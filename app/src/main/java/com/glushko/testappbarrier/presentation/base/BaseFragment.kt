@@ -11,7 +11,7 @@ import androidx.navigation.NavOptions
 import androidx.navigation.fragment.findNavController
 import androidx.viewbinding.ViewBinding
 import com.glushko.testappbarrier.R
-import com.glushko.testappbarrier.data.network.UnsuccessfulResponseException
+import com.glushko.testappbarrier.data.datasource.network.model.UnsuccessfulResponseException
 import com.glushko.testappbarrier.utils.extensions.toast
 import timber.log.Timber
 import java.net.SocketTimeoutException

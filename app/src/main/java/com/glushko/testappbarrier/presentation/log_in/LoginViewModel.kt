@@ -1,11 +1,10 @@
 package com.glushko.testappbarrier.presentation.log_in
 
 import androidx.lifecycle.LiveData
-import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.glushko.testappbarrier.data.model.token.TokenJWT
-import com.glushko.testappbarrier.repository.auth.AuthRepository
+import com.glushko.testappbarrier.domain.aurh.AuthRepository
 import com.glushko.testappbarrier.utils.EventLiveData
 import dagger.hilt.android.lifecycle.HiltViewModel
 import javax.inject.Inject

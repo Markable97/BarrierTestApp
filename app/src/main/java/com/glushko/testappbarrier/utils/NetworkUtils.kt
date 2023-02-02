@@ -3,9 +3,9 @@ package com.glushko.testappbarrier.utils
 import com.glushko.testappbarrier.R
 import com.glushko.testappbarrier.data.model.token.TokenJWT
 import com.glushko.testappbarrier.data.model.token.TokenJWTRes
-import com.glushko.testappbarrier.data.network.ApiService
-import com.glushko.testappbarrier.data.network.UnsuccessfulResponseException
-import com.glushko.testappbarrier.repository.user.UserAuthStorage
+import com.glushko.testappbarrier.data.datasource.network.ApiService
+import com.glushko.testappbarrier.data.datasource.network.model.UnsuccessfulResponseException
+import com.glushko.testappbarrier.data.datasource.local.UserAuthStorage
 import com.google.gson.Gson
 import com.google.gson.JsonObject
 import retrofit2.Response

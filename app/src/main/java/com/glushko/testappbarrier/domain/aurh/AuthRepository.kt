@@ -1,7 +1,7 @@
-package com.glushko.testappbarrier.repository.auth
+package com.glushko.testappbarrier.domain.aurh
 
 import com.glushko.testappbarrier.data.model.token.TokenJWT
-import com.glushko.testappbarrier.data.model.user.UserInfoUI
+import com.glushko.testappbarrier.presentation.profile.model.UserInfoUI
 import com.glushko.testappbarrier.utils.Result
 
 interface AuthRepository {

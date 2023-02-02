@@ -7,7 +7,7 @@ import android.view.ViewGroup
 import androidx.fragment.app.viewModels
 import androidx.navigation.NavOptions
 import com.glushko.testappbarrier.R
-import com.glushko.testappbarrier.data.network.UnsuccessfulResponseException
+import com.glushko.testappbarrier.data.datasource.network.model.UnsuccessfulResponseException
 import com.glushko.testappbarrier.databinding.FragmentProfileBinding
 import com.glushko.testappbarrier.presentation.base.BaseFragment
 import com.glushko.testappbarrier.utils.extensions.setSafeOnClickListener

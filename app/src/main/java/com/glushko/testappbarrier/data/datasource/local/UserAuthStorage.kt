@@ -1,4 +1,4 @@
-package com.glushko.testappbarrier.repository.user
+package com.glushko.testappbarrier.data.datasource.local
 
 import android.content.SharedPreferences
 import androidx.core.content.edit

@@ -1,4 +1,4 @@
-package com.glushko.testappbarrier.data.model.user
+package com.glushko.testappbarrier.presentation.profile.model
 
 data class UserInfoUI(
     val userId: Int?,

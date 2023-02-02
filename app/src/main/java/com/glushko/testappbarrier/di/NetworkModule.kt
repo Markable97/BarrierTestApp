@@ -1,8 +1,8 @@
 package com.glushko.testappbarrier.di
 
-import com.glushko.testappbarrier.data.network.ApiService
-import com.glushko.testappbarrier.data.network.BaseTokenInterceptor
-import com.glushko.testappbarrier.repository.user.UserAuthStorage
+import com.glushko.testappbarrier.data.datasource.network.ApiService
+import com.glushko.testappbarrier.data.datasource.network.BaseTokenInterceptor
+import com.glushko.testappbarrier.data.datasource.local.UserAuthStorage
 import com.glushko.testappbarrier.utils.Constants
 import com.glushko.testappbarrier.utils.NetworkUtils
 import com.google.gson.Gson

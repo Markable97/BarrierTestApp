@@ -1,6 +1,7 @@
 package com.glushko.testappbarrier.data.model.user
 
 import com.glushko.testappbarrier.data.model.Transformable
+import com.glushko.testappbarrier.presentation.profile.model.UserInfoUI
 import com.google.gson.annotations.SerializedName
 
 data class UserInfoReMain(

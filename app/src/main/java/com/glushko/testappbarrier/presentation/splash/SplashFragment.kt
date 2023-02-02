@@ -6,7 +6,7 @@ import androidx.fragment.app.Fragment
 import androidx.navigation.NavOptions
 import androidx.navigation.fragment.findNavController
 import com.glushko.testappbarrier.R
-import com.glushko.testappbarrier.repository.user.UserAuthStorage
+import com.glushko.testappbarrier.data.datasource.local.UserAuthStorage
 import dagger.hilt.android.AndroidEntryPoint
 import javax.inject.Inject
 

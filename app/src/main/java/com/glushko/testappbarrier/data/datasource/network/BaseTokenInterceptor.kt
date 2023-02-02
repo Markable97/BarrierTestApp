@@ -1,4 +1,4 @@
-package com.glushko.testappbarrier.data.network
+package com.glushko.testappbarrier.data.datasource.network
 
 import android.content.SharedPreferences
 import com.glushko.testappbarrier.utils.Constants
