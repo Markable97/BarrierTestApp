@@ -3,18 +3,16 @@ package com.glushko.testappbarrier.presentation.splash
 import android.os.Bundle
 import android.view.View
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.viewModels
 import androidx.navigation.NavOptions
 import androidx.navigation.fragment.findNavController
 import com.glushko.testappbarrier.R
-import com.glushko.testappbarrier.data.datasource.local.UserAuthStorage
 import dagger.hilt.android.AndroidEntryPoint
-import javax.inject.Inject
 
 @AndroidEntryPoint
 class SplashFragment : Fragment(R.layout.fragment_splash) {
 
-    @Inject
-    lateinit var userAuthStorage: UserAuthStorage
+    private val viewModel by viewModels<SplashViewModel>()
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
@@ -23,13 +21,16 @@ class SplashFragment : Fragment(R.layout.fragment_splash) {
             .setPopUpTo(R.id.nav_graph_main, true)
             .build()
 
-        val idNavigate = if (userAuthStorage.isAuth) {
-            R.id.profileFragment
-        } else {
-            R.id.logInFragment
+        viewModel.liveDataIsAuth.observe(viewLifecycleOwner){ isAuth ->
+            val idNavigate = if (isAuth) {
+                R.id.profileFragment
+            } else {
+                R.id.logInFragment
+            }
+
+            findNavController().navigate(idNavigate, args = null, navOptions = navOptions)
         }
 
-        findNavController().navigate(idNavigate, args = null, navOptions = navOptions)
     }
 
 

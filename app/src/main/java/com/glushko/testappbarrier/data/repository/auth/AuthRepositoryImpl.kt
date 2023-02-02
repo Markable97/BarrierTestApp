@@ -24,6 +24,7 @@ class AuthRepositoryImpl @Inject constructor(
     private val userAuthStorage: UserAuthStorage,
     private val gson: Gson
 ): AuthRepository {
+    override fun isAuth(): Boolean = userAuthStorage.isAuth
 
     override suspend fun signUpUser(
         firstName: String,

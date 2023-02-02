@@ -6,6 +6,8 @@ import com.glushko.testappbarrier.utils.Result
 
 interface AuthRepository {
 
+    fun isAuth(): Boolean
+
     suspend fun signUpUser(
         firstName: String,
         email: String,
